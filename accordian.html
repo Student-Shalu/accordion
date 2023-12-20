@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Question & Answer Section</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+        .center{
+            width: 90vw;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .question{
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .question:hover{
+            box-shadow: 0 0 10px wheat;
+            cursor: pointer;
+        }
+        .questionText{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: rgb(51, 28, 207);
+        }
+        .questionText p{
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        .questionText .questionBtn{
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: slateblue;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .answerText{
+            border-top: 2px solid slateblue;
+            padding: 0.5rem 0 0 0;
+            text-align: justify;
+            display: none;
+            color: rgb(65, 46, 193);
+            font-size: 1.4rem;
+        }
+        .minus{
+            display: none;
+        }
+        .showText .answerText{
+            display: block;
+        }
+        .showText .minus{
+            display: inline;
+        }
+        .showText .plus{
+            display: none;
+        }
+        h1{
+            text-align: center;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="questions">
+        <h1>Question & Answer Section</h1>
+        <div class="center">
+            <article class="question">
+                <div class="questionText">
+                    <p>What is the meaning of web development?</p>
+                    <button class="questionBtn">
+                        <span class="plus"><i class='bx bx-plus'></i></span>
+                        <span class="minus"><i class='bx bx-minus'></i></span>
+                    </button>
+                </div>
+                <div class="answerText">
+                    <p>Web development refers to the process of creating, building, and maintaining websites and web applications that are accessible via the internet. It involves a range of tasks, including web design, content creation, server-side scripting, client-side scripting, network security configuration, and database management, among others.</p>
+                </div>
+            </article>
+            <article class="question">
+                <div class="questionText">
+                    <p>Is 6 months enough for web development?</p>
+                    <button class="questionBtn">
+                        <span class="plus"><i class='bx bx-plus'></i></span>
+                        <span class="minus"><i class='bx bx-minus'></i></span>
+                    </button>
+                </div>
+                <div class="answerText">
+                    <p>Six months can provide a foundational understanding of web development basics, covering HTML, CSS, JavaScript, and some frameworks. Mastery often requires continuous learning and practice beyond this timeframe.</p>
+                </div>
+            </article>
+            <article class="question">
+                <div class="questionText">
+                    <p>Are web developers in demand 2024?</p>
+                    <button class="questionBtn">
+                        <span class="plus"><i class='bx bx-plus'></i></span>
+                        <span class="minus"><i class='bx bx-minus'></i></span>
+                    </button>
+                </div>
+                <div class="answerText">
+                    <p>As of my last update in January 2022, web developers were in high demand due to the increasing reliance on online platforms. It's likely that demand for skilled web developers will persist in 2024 due to ongoing technological advancements and digital expansion.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script>
+        const questions=document.querySelectorAll(".question");
+        questions.forEach((question)=>{
+            const btn=question.querySelector(".questionBtn");
+            btn.addEventListener("click",()=>{
+                question.classList.toggle("showText");
+            })
+        })
+    </script>
+</body>
+</html>
